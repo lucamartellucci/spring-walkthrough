@@ -1,0 +1,44 @@
+Source Stackoverflow: 
+http://stackoverflow.com/questions/288861/eclipse-optimize-imports-to-include-static-imports
+http://stackoverflow.com/questions/11829495/eclipse-has-some-problems-with-auto-import-static-classes
+
+
+I'm using Eclipse Europa, which also has the Favorite preference section:
+
+Window > Preferences > Java > Editor > Content Assist > Favorites
+In mine, I have the following entries (when adding, use "New Type" and omit the .*):
+
+org.hamcrest.Matchers.*
+org.hamcrest.CoreMatchers.*
+org.junit.*
+org.junit.Assert.*
+org.junit.Assume.*
+org.junit.matchers.JUnitMatchers.*
+
+All but the third of those are static imports. 
+By having those as favorites, if I type "assertT" and hit Ctrl+Space, Eclipse offers up assertThat 
+as a suggestion, and if I pick it, it will add the proper static import to the file.
+
+
+Extra for mockito
+
+org.mockito.Matchers.*
+org.mockito.Mock.*
+org.mockito.Mockito.*
+
+
+
+
+SHORTCUTS ECLIPSE
+ALT + SHIFT + X + J ---> exec the java application
+ALT + SHIFT + X + T ---> exec the test
+ALT + SHIFT + X + M ---> exec maven
+
+ALT + SHIFT + S     ---> open source menu
+ALT + SHIFT + T     ---> open refactor menu
+ALT + SHIFT + R     ---> rename
+ALT + SHIFT + I     ---> inline
+CTRL + 1            ---> quick fix
+
+
+ 
