@@ -16,11 +16,14 @@ public class BusinessLogicTest {
 	private Counter counterMock;
 
 	@Before
-	public void setup() {
+	public void setup() throws Exception {
 		bl = new BusinessLogic();
 
 		counterMock = mock(Counter.class);
+		// manually set the mock. at application runtime the dependecy is managed by the spring container
 		bl.setCounter(counterMock);
+		// manually call the afterPropertySet, the unit test is not inside a spring context
+		bl.afterPropertiesSet();
 	}
 
 	@Test

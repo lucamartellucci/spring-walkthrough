@@ -2,8 +2,16 @@ package com.absontheweb.springcore.beans;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.InitializingBean;
 
-public class BusinessLogic {
+public class BusinessLogic implements InitializingBean {
+	
+	/*
+	 * NOTE
+	 * The JSR-250 @PostConstruct and @PreDestroy annotations are generally considered 
+	 * best practice for receiving lifecycle callbacks in a modern Spring application. 
+	 * Using these annotations means that your beans are not coupled to Spring specific interfaces
+	 */
 	
 	Log log = LogFactory.getLog("com.absontheweb.springcore.beans.BusinessLogic");
 	
@@ -17,6 +25,11 @@ public class BusinessLogic {
 
 	public void setCounter(Counter counter) {
 		this.counter = counter;
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		log.info("BusinessLogic is initialized");
 	}
 
 }
