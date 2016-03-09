@@ -39,6 +39,7 @@ ALT + SHIFT + T     ---> open refactor menu
 ALT + SHIFT + R     ---> rename
 ALT + SHIFT + I     ---> inline
 CTRL + 1            ---> quick fix
+ALT + F5            ---> update maven project
 
 
  
