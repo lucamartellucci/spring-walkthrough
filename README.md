@@ -34,8 +34,8 @@ To execute the application launch the command
 $ mvn clean package jetty:run
 ```
 
-Now open your browser and navigate to the page http://localhost:8080/springcore/hello
+Now open your browser and navigate to the page [http://localhost:8080/springcore/hello]
 
 To customize the hello world message use the query param
-http://localhost:8080/springcore/hello?name=Jack
+[http://localhost:8080/springcore/hello?name=Jack]
 
