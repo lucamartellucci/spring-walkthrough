@@ -1,7 +1,7 @@
 package com.absontheweb.springcore.beans;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 
 public class BusinessLogic implements InitializingBean {
@@ -13,7 +13,7 @@ public class BusinessLogic implements InitializingBean {
 	 * Using these annotations means that your beans are not coupled to Spring specific interfaces
 	 */
 	
-	Log log = LogFactory.getLog("com.absontheweb.springcore.beans.BusinessLogic");
+	private static Logger log = LoggerFactory.getLogger("com.absontheweb.springcore.beans.BusinessLogic");
 	
 	private Counter counter;
 	

@@ -1,7 +1,7 @@
 package com.absontheweb.springcore;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.absontheweb.springcore.beans.BusinessLogic;
@@ -9,7 +9,7 @@ import com.absontheweb.springcore.beans.Counter;
 
 public class Application {
 	
-	private static Log log = LogFactory.getLog("com.absontheweb.springcore.Application");
+	private static Logger log = LoggerFactory.getLogger("com.absontheweb.springcore.Application");
 	
 	public static void main(String[] args) {
 		

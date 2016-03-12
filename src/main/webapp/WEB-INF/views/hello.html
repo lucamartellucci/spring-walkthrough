@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Hello Spring MVC</title>
+
+<link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="md-col-12">
+				<h2 id="greetings" th:text="'Hello ' + ${name} + '!'"></h2>
+			</div>
+		</div>
+	</div>
+	
+	<script th:src="@{/resources/js/jquery-1.12.1.min.js}"></script>
+	<script th:src="@{/resources/js/bootstrap.min.js}"></script>
+</body>
+</html>

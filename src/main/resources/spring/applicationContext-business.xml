@@ -13,12 +13,4 @@
 		<property name="counter" ref="counter"></property>
     </bean>
     
-    <!-- To use AUTOWIRED in java classes -->
-    <!-- 
-	    <bean id="counter" class="com.absontheweb.springcore.beans.Counter" scope="prototype">
-	    </bean>
-		<bean id="business" class="com.absontheweb.springcore.beans.BusinessLogic">
-	    </bean>
-	    <context:annotation-config />
- 	-->
 </beans>

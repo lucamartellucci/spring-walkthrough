@@ -5,11 +5,16 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
 id="WebApp_ID" version="3.0">
 
-	<display-name>Archetype Created Web Application</display-name>
+	<display-name>Spring MVC Web Application</display-name>
 
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- this is needed to avoid the dispatcher-servlet.xml config file -->
+		<init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
@@ -18,12 +23,16 @@ id="WebApp_ID" version="3.0">
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<!-- main spring configuration file. this context param is used by 
+		the ContextLoaderListener to bootstrap the spring container  -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/application-context.xml</param-value>
+		<param-value>classpath:/spring/applicationContext-main.xml</param-value>
 	</context-param>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	
 </web-app>
