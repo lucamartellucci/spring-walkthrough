@@ -17,8 +17,10 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.absontheweb.springcore.config.WebConfig;
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/spring/applicationContext-web.xml" })
+@ContextConfiguration ( classes = {WebConfig.class} )
 @WebAppConfiguration
 public class HelloControllerTest {
 	

@@ -1,26 +1,26 @@
 package com.absontheweb.springcore.web;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
-public class HelloController extends AbstractController {
+@Controller
+public class HelloController {
 	
 	private final static Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-	@Override
-	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// get the parameter from query string
-		String nameParam = request.getParameter("name");
-		logger.info("Serving request /hello with param name=[{}]", nameParam);
+	@RequestMapping(method = RequestMethod.GET, path="/hello")
+	public ModelAndView hello(@RequestParam("name") String name) throws Exception {
+
+		logger.info("Serving request /hello with param name=[{}]", name);
 		
 		// prepare to render the view
 		ModelAndView model = new ModelAndView("hello");
-		model.addObject("name", nameParam != null ? nameParam : "World");
+		model.addObject("name", name != null ? name : "World");
 		return model;
 	}
 	
