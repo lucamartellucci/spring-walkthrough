@@ -11,7 +11,7 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
-@ComponentScan(basePackages={"com.absontheweb.springcore.web"})
+@ComponentScan(basePackages={"com.absontheweb.springcore.web","com.absontheweb.springcore.service"})
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
