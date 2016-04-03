@@ -1,6 +1,7 @@
 package com.absontheweb.springcore.web;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.xpath;
@@ -30,7 +31,7 @@ public class HelloControllerTest {
 	private MockMvc mockMvc;
 
 	@Before
-	public void setup() {
+	public void setUp() {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 	}
 
@@ -43,6 +44,8 @@ public class HelloControllerTest {
 			.andExpect(status().is2xxSuccessful())
 			.andExpect(xpath("//h2[@id='greetings']").exists())
 			.andExpect(xpath("//h2[@id='greetings']/text()").string(is("Hello Jack!")));
+		
+		assertEquals(true,true);
 	}
 
 }
