@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.web;
+package com.absontheweb.springwalkthrough.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.absontheweb.springcore.model.Todo;
-import com.absontheweb.springcore.model.TodoStatus;
-import com.absontheweb.springcore.service.TodoService;
+import com.absontheweb.springwalkthrough.model.Todo;
+import com.absontheweb.springwalkthrough.model.TodoStatus;
+import com.absontheweb.springwalkthrough.service.TodoService;
 
 @Controller
 public class TodoController {

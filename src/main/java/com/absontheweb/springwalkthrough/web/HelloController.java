@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.web;
+package com.absontheweb.springwalkthrough.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

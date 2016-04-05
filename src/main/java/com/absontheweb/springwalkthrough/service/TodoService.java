@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.service;
+package com.absontheweb.springwalkthrough.service;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -8,8 +8,8 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.absontheweb.springcore.model.Todo;
-import com.absontheweb.springcore.model.TodoStatus;
+import com.absontheweb.springwalkthrough.model.Todo;
+import com.absontheweb.springwalkthrough.model.TodoStatus;
 
 @Service
 public class TodoService {

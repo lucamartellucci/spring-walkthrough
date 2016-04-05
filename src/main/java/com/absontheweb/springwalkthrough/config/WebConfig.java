@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.config;
+package com.absontheweb.springwalkthrough.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +11,10 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
-@ComponentScan(basePackages={"com.absontheweb.springcore.web","com.absontheweb.springcore.service"})
+@ComponentScan(basePackages={
+	"com.absontheweb.springwalkthrough.web",
+	"com.absontheweb.springwalkthrough.service"
+})
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 

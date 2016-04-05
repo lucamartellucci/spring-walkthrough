@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.model;
+package com.absontheweb.springwalkthrough.model;
 
 import java.time.LocalDateTime;
 

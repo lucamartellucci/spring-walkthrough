@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.config;
+package com.absontheweb.springwalkthrough.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
