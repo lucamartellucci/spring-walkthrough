@@ -9,7 +9,7 @@ import com.absontheweb.springwalkthrough.beans.Counter;
 
 public class Application {
 	
-	private static Log log = LogFactory.getLog("com.absontheweb.springcore.Application");
+	private static Log log = LogFactory.getLog("com.absontheweb.springwalkthrough.Application");
 	
 	public static void main(String[] args) {
 		

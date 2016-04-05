@@ -73,7 +73,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>com.absontheweb.springcore.Application</mainClass>
+							<mainClass>com.absontheweb.springwalkthrough.Application</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
