@@ -1,11 +1,11 @@
-package com.absontheweb.springcore;
+package com.absontheweb.springwalkthrough;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.absontheweb.springcore.beans.BusinessLogic;
-import com.absontheweb.springcore.beans.Counter;
+import com.absontheweb.springwalkthrough.beans.BusinessLogic;
+import com.absontheweb.springwalkthrough.beans.Counter;
 
 public class Application {
 	

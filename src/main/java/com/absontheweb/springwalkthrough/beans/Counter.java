@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.beans;
+package com.absontheweb.springwalkthrough.beans;
  
 public class Counter {
 	

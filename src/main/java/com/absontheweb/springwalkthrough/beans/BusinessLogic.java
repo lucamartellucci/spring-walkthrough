@@ -1,4 +1,4 @@
-package com.absontheweb.springcore.beans;
+package com.absontheweb.springwalkthrough.beans;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

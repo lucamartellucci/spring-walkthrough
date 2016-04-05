@@ -6,18 +6,18 @@
     	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
     	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="counter" class="com.absontheweb.springcore.beans.Counter" scope="prototype">
+    <bean id="counter" class="com.absontheweb.springwalkthrough.beans.Counter" scope="prototype">
     </bean>
 
-	<bean id="business" class="com.absontheweb.springcore.beans.BusinessLogic">
+	<bean id="business" class="com.absontheweb.springwalkthrough.beans.BusinessLogic">
 		<property name="counter" ref="counter"></property>
     </bean>
     
     <!-- To use AUTOWIRED in java classes -->
     <!-- 
-	    <bean id="counter" class="com.absontheweb.springcore.beans.Counter" scope="prototype">
+	    <bean id="counter" class="com.absontheweb.springwalkthrough.beans.Counter" scope="prototype">
 	    </bean>
-		<bean id="business" class="com.absontheweb.springcore.beans.BusinessLogic">
+		<bean id="business" class="com.absontheweb.springwalkthrough.beans.BusinessLogic">
 	    </bean>
 	    <context:annotation-config />
  	-->
