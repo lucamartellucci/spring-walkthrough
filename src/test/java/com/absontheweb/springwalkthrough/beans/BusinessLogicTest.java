@@ -19,7 +19,7 @@ public class BusinessLogicTest {
 	private Counter counterMock;
 
 	@Before
-	public void setup() throws Exception {
+	public void setUp() throws Exception {
 		bl = new BusinessLogic();
 
 		counterMock = mock(Counter.class);

@@ -17,7 +17,7 @@ public class CounterTest {
 
 
 	@Before
-	public void setup() {
+	public void setUp() {
 		counter = new Counter();
 	}
 

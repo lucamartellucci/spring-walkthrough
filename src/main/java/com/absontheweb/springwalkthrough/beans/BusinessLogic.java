@@ -13,7 +13,7 @@ public class BusinessLogic implements InitializingBean {
 	 * Using these annotations means that your beans are not coupled to Spring specific interfaces
 	 */
 	
-	Log log = LogFactory.getLog("com.absontheweb.springwalkthrough.beans.BusinessLogic");
+	private static Log log = LogFactory.getLog("com.absontheweb.springwalkthrough.beans.BusinessLogic");
 	
 	private Counter counter;
 	
