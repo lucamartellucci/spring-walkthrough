@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/lucamartellucci/spring-walkthrough.svg?branch=master)](https://travis-ci.org/lucamartellucci/spring-walkthrough)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/dc15e4bdd44545e5893ad9ec65071610)](https://www.codacy.com/app/luca-martellucci/spring-walkthrough)
 [![Dependency Status](https://www.versioneye.com/user/projects/570526e7fcd19a00518543dd/badge.svg?style=plastic)](https://www.versioneye.com/user/projects/570526e7fcd19a00518543dd)
-[![GitHub license](https://img.shields.io/github/license/lucamartellucci/spring-walkthroug.svg)]()
+[![GitHub license](https://img.shields.io/github/license/lucamartellucci/spring-walkthrough.svg)](https://github.com/lucamartellucci/spring-walkthrough/blob/master/LICENSE.md)
 
 ## Spring Framework walkthrough 
 
