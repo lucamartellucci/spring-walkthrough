@@ -47,9 +47,9 @@ To execute the application launch the command
 $ mvn clean package jetty:run
 ```
 
-Now open your browser and navigate to the page <http://localhost:8080/spring-walkthrough/hello>
+Now open your browser and navigate to the page <http://localhost:8080/hello>
 
-To customize the hello world message use the query param <http://localhost:8080/spring-walkthrough/hello?name=Jack>
+To customize the hello world message use the query param <http://localhost:8080/hello?name=Jack>
 
 ### Step 3 - ToDo Web application with Spring MVC
 This simple ToDo Application is a Spring MVC application with Thymeleaf template engine. The configuration is "Java based", this means that all the spring xml files are replaced by Java classes.
@@ -63,5 +63,5 @@ To execute the application launch the following command:
 $ mvn clean package jetty:run
 ```
 
-Now open your browser and navigate to: <http://localhost:8080/>
+Now open your browser and navigate to: <http://localhost:8080/todos>
 
