@@ -12,8 +12,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
 @ComponentScan(basePackages={
-	"com.absontheweb.springwalkthrough.web",
-	"com.absontheweb.springwalkthrough.service"
+	"com.absontheweb.springwalkthrough.web"
 })
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {

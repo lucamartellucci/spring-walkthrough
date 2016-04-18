@@ -1,61 +1,120 @@
 package com.absontheweb.springwalkthrough.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 
 public class Todo {
 	
-	private String uuid;
-	private String todo;
-	private TodoStatus status;
+	private Long id;
+	private String name;
+	private Status status;
+	private TodoType type;
 	private LocalDateTime creationDate;
+	private LocalDateTime dueDate;
+	private List<Task> tasks = new ArrayList<>(); 
 	
-	public Todo() {}
-	public Todo(String todo) {
+	
+	public Todo() {
+		this.type = TodoType.SIMPLE;
+	}
+	
+	public Todo(String name) {
 		super();
-		this.todo = todo;
+		this.name = name;
+		this.type = TodoType.SIMPLE;
 	}
-	public String getUuid() {
-		return uuid;
+	
+	public Todo(String name, List<Task> tasks) {
+		super();
+		this.name = name;
+		this.type = TodoType.TASK_LIST;
+		this.tasks.addAll(tasks);
 	}
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
-	public String getTodo() {
-		return todo;
-	}
-	public void setTodo(String todo) {
-		this.todo = todo;
-	}
-	public TodoStatus getStatus() {
-		return status;
-	}
-	public void setStatus(TodoStatus status) {
-		this.status = status;
-	}
-	public LocalDateTime getCreationDate() {
-		return creationDate;
-	}
-	public void setCreationDate(LocalDateTime creationDate) {
-		this.creationDate = creationDate;
+	
+	public Todo addTask(Task t) {
+		this.tasks.add(t);
+		return this;
 	}
 	
 	public boolean isDone() {
-		return TodoStatus.done.equals(this.status);
+		return Status.DONE.equals(this.status);
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public TodoType getType() {
+		return type;
+	}
+
+	public void setType(TodoType type) {
+		this.type = type;
+	}
+
+	public LocalDateTime getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(LocalDateTime creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public LocalDateTime getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(LocalDateTime dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
 	}
 	
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Todo [uuid=");
-		builder.append(uuid);
-		builder.append(", todo=");
-		builder.append(todo);
-		builder.append(", status=");
-		builder.append(status);
-		builder.append(", creationDate=");
-		builder.append(creationDate);
-		builder.append("]");
-		return builder.toString();
+		return ToStringBuilder.reflectionToString(this);
+	}
+	
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj);
 	}
 	
 }
