@@ -1,7 +1,7 @@
 package com.absontheweb.springwalkthrough.web;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.xpath;
@@ -18,10 +18,11 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.absontheweb.springwalkthrough.config.ServiceConfigTest;
 import com.absontheweb.springwalkthrough.config.WebConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration ( classes = {WebConfig.class} )
+@ContextConfiguration ( classes = {ServiceConfigTest.class, WebConfig.class} )
 @WebAppConfiguration
 public class HelloControllerTest {
 	
@@ -47,7 +48,7 @@ public class HelloControllerTest {
 		
 		assertEquals(true,true);
 	}
-
+	
 }
 
 

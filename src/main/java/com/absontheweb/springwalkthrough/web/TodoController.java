@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.absontheweb.springwalkthrough.model.Status;
 import com.absontheweb.springwalkthrough.model.Todo;
-import com.absontheweb.springwalkthrough.model.TodoStatus;
 import com.absontheweb.springwalkthrough.service.TodoService;
 
 @Controller
 public class TodoController {
-	
 	
 	private static final Logger logger = LoggerFactory.getLogger(TodoController.class);
 	
@@ -34,12 +33,12 @@ public class TodoController {
 	}
 	
 	@RequestMapping(path="/todos/done", method=RequestMethod.GET)
-	public String doneTodo(@RequestParam String id, Model model) throws Exception {
+	public String doneTodo(@RequestParam Long id, Model model) throws Exception {
 		
-		logger.info("Done for todo with uuid {}",id);
+		logger.info("Done for todo with id {}",id);
 		
 		// update the todo status
-		todoService.updateTodoStatus(id, TodoStatus.done);
+		todoService.updateTodoStatus(id, Status.DONE);
 		
 		fillWithTodos(model);
 		// name of the view
@@ -47,9 +46,9 @@ public class TodoController {
 	}
 	
 	@RequestMapping(path="/todos/trash", method=RequestMethod.GET)
-	public String todoTrash(@RequestParam String id, Model model) throws Exception {
+	public String todoTrash(@RequestParam Long id, Model model) throws Exception {
 		
-		logger.info("Done for todo with uuid {}",id);
+		logger.info("Done for todo with id {}",id);
 		
 		// update the todo status
 		todoService.removeTodo(id);
