@@ -1,0 +1,24 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+
+spring.cloud.config.discovery.enabled: true
+
+#
+# TODO: move to centralized configuration
+#
+
+hibernate:
+	dialect: org.hibernate.dialect.H2Dialect
+	show_sql: false
+	hbm2ddl.auto: create
+
+jdbc:
+	driverClassName: org.h2.Driver
+	url: jdbc:h2:./db/todos
+	user: sa
+	pass:
