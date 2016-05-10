@@ -1,7 +1,6 @@
 package io.lucci.springwalkthrough.todoapi.web;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.xpath;
@@ -37,7 +36,7 @@ public class HelloControllerTest {
 	}
 
 	@Test
-	public void testHandleRequestInternal() throws Exception {
+	public void testHelloWithParam() throws Exception {
 		MockHttpServletRequestBuilder createMessage = get("/hello")
 				.param("name", "Jack");
 		
@@ -45,10 +44,17 @@ public class HelloControllerTest {
 			.andExpect(status().is2xxSuccessful())
 			.andExpect(xpath("//h2[@id='greetings']").exists())
 			.andExpect(xpath("//h2[@id='greetings']/text()").string(is("Hello Jack!")));
-		
-		assertEquals(true,true);
 	}
 	
+	@Test
+	public void testHello() throws Exception {
+		MockHttpServletRequestBuilder createMessage = get("/hello");
+		
+		mockMvc.perform(createMessage)
+			.andExpect(status().is2xxSuccessful())
+			.andExpect(xpath("//h2[@id='greetings']").exists())
+			.andExpect(xpath("//h2[@id='greetings']/text()").string(is("Hello World!")));
+	}
 }
 
 

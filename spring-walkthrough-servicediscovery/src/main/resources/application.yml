@@ -3,7 +3,7 @@ server:
 
 eureka:
   client:
-    serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
-
-spring.cloud.config.discovery.enabled: true
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
