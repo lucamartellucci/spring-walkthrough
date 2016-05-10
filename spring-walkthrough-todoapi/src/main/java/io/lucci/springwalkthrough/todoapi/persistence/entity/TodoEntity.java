@@ -11,8 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import io.lucci.springwalkthrough.todoapi.model.Status;
-import io.lucci.springwalkthrough.todoapi.model.TodoType;
+import io.lucci.springwalkthrough.commons.model.Status;
+import io.lucci.springwalkthrough.commons.model.TodoType;
 
 
 @Entity

@@ -1,41 +1,47 @@
 package io.lucci.springwalkthrough.todoapi.config;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.ByteArrayHttpMessageConverter;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 @Configuration
 @ComponentScan(basePackages={
-	"io.lucci.springwalkthrough.todoapi.web"
+	"io.lucci.springwalkthrough.todoapi.controller"
 })
 @EnableWebMvc
-@EnableAutoConfiguration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-	private String staticPathPattern = "/**";
-
-	private Integer cachePeriod = 31556926;
-	
-	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
-			"classpath:/META-INF/resources/", "classpath:/resources/",
-			"classpath:/static/", "classpath:/public/" };
-	
 	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	    if (!registry.hasMappingForPattern("/webjars/**")) {
-	        registry.addResourceHandler("/webjars/**")
-	        	.addResourceLocations("classpath:/META-INF/resources/webjars/")
-	        	.setCachePeriod(cachePeriod);
-	    }
-	    if (!registry.hasMappingForPattern(staticPathPattern)) {
-				registry.addResourceHandler(staticPathPattern)
-					.addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS)
-					.setCachePeriod(cachePeriod);
-		}
-	    
-	}
+    public void configureMessageConverters( final List<HttpMessageConverter<?>> converters ) {
+
+        final ByteArrayHttpMessageConverter byteArrayHttpMessageConverter = new ByteArrayHttpMessageConverter();
+        byteArrayHttpMessageConverter.setSupportedMediaTypes( Arrays.asList( MediaType.APPLICATION_OCTET_STREAM ) );
+        converters.add( byteArrayHttpMessageConverter );
+
+        final ObjectMapper mapper = Jackson2ObjectMapperBuilder.json()
+	        .serializationInclusion(JsonInclude.Include.NON_NULL) // Don’t include null values
+	        .featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS) //ISODate
+	        .build();
+        
+        final MappingJackson2HttpMessageConverter jsonConverter = new MappingJackson2HttpMessageConverter();
+        jsonConverter.setSupportedMediaTypes( Arrays.asList( MediaType.APPLICATION_JSON ) );
+        jsonConverter.setObjectMapper( mapper );
+        converters.add( jsonConverter );
+
+        super.configureMessageConverters( converters );
+    }	
    
 }

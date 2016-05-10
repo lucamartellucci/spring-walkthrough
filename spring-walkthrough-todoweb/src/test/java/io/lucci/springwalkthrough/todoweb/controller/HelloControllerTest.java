@@ -1,4 +1,4 @@
-package io.lucci.springwalkthrough.todoapi.web;
+package io.lucci.springwalkthrough.todoweb.controller;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -17,8 +17,8 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import io.lucci.springwalkthrough.todoapi.config.ServiceConfigTest;
-import io.lucci.springwalkthrough.todoapi.config.WebConfig;
+import io.lucci.springwalkthrough.todoweb.config.ServiceConfigTest;
+import io.lucci.springwalkthrough.todoweb.config.WebConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration ( classes = {ServiceConfigTest.class, WebConfig.class} )

@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
-import io.lucci.springwalkthrough.todoapi.model.Todo;
+import io.lucci.springwalkthrough.commons.model.Todo;
 import io.lucci.springwalkthrough.todoapi.persistence.entity.TodoEntity;
 
 @Component

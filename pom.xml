@@ -13,8 +13,10 @@
 	</properties>
 	
 	 <modules>
+	 	<module>spring-walkthrough-commons</module>
         <module>spring-walkthrough-servicediscovery</module>
         <module>spring-walkthrough-todoapi</module>
+        <module>spring-walkthrough-todoweb</module>
     </modules>
 	
 	

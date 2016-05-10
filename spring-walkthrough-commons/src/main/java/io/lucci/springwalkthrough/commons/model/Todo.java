@@ -1,4 +1,4 @@
-package io.lucci.springwalkthrough.todoapi.model;
+package io.lucci.springwalkthrough.commons.model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

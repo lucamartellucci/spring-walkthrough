@@ -6,8 +6,8 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.lucci.springwalkthrough.todoapi.model.Status;
-import io.lucci.springwalkthrough.todoapi.model.Todo;
+import io.lucci.springwalkthrough.commons.model.Status;
+import io.lucci.springwalkthrough.commons.model.Todo;
 import io.lucci.springwalkthrough.todoapi.persistence.entity.TodoEntity;
 import io.lucci.springwalkthrough.todoapi.persistence.repo.TodoRepo;
 import io.lucci.springwalkthrough.todoapi.service.adapter.TodoAdapter;
@@ -22,10 +22,11 @@ public class TodoServiceImpl implements TodoService {
 	private TodoAdapter todoAdapter;
 	
 	@Override
-	public void addTodo(Todo todo){
+	public Todo addTodo(Todo todo){
 		todo.setStatus(Status.ACTIVE);
 		todo.setCreationDate(LocalDateTime.now());
-		repo.save(todoAdapter.toEntity(todo));
+		TodoEntity savedTodo = repo.save(todoAdapter.toEntity(todo));
+		return todoAdapter.toTodo(savedTodo);
 	}
 	
 	@Override

@@ -2,12 +2,12 @@ package io.lucci.springwalkthrough.todoapi.service;
 
 import java.util.Collection;
 
-import io.lucci.springwalkthrough.todoapi.model.Status;
-import io.lucci.springwalkthrough.todoapi.model.Todo;
+import io.lucci.springwalkthrough.commons.model.Status;
+import io.lucci.springwalkthrough.commons.model.Todo;
 
 public interface TodoService {
 
-	void addTodo(Todo todo);
+	Todo addTodo(Todo todo);
 
 	Collection<Todo> getTodos();
 

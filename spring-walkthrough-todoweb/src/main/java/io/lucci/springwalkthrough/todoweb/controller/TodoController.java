@@ -1,4 +1,4 @@
-package io.lucci.springwalkthrough.todoapi.web;
+package io.lucci.springwalkthrough.todoweb.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import io.lucci.springwalkthrough.todoapi.model.Status;
-import io.lucci.springwalkthrough.todoapi.model.Todo;
-import io.lucci.springwalkthrough.todoapi.service.TodoService;
+import io.lucci.springwalkthrough.commons.model.Status;
+import io.lucci.springwalkthrough.commons.model.Todo;
+import io.lucci.springwalkthrough.todoweb.client.TodoClient;
 
 @Controller
 public class TodoController {
@@ -20,7 +20,7 @@ public class TodoController {
 	private static final Logger logger = LoggerFactory.getLogger(TodoController.class);
 	
 	@Autowired
-	private TodoService todoService;
+	private TodoClient todoClient;
 	
 	@RequestMapping(path="/todos", method=RequestMethod.GET)
 	public String listTodos(Model model) throws Exception {
@@ -38,7 +38,7 @@ public class TodoController {
 		logger.info("Done for todo with id {}",id);
 		
 		// update the todo status
-		todoService.updateTodoStatus(id, Status.DONE);
+//		todoClient.updateTodoStatus(id, Status.DONE);
 		
 		fillWithTodos(model);
 		// name of the view
@@ -51,7 +51,7 @@ public class TodoController {
 		logger.info("Done for todo with id {}",id);
 		
 		// update the todo status
-		todoService.removeTodo(id);
+//		todoClient.removeTodo(id);
 		
 		fillWithTodos(model);
 		// name of the view
@@ -62,7 +62,7 @@ public class TodoController {
 	public String todoAdd(@ModelAttribute Todo todo, Model model) throws Exception {
 		
 		logger.info("Adding the todo {}", todo);
-		todoService.addTodo(todo);
+		todoClient.addTodo(todo);
 		
 		fillWithTodos(model);
 		// name of the view
@@ -71,7 +71,7 @@ public class TodoController {
 	
 	private void fillWithTodos(Model model) {
 		// add the collection of todos
-		model.addAttribute("todos", todoService.getTodos());
+		model.addAttribute("todos", todoClient.getTodos());
 		// add an empty object used to add a new todo
 		model.addAttribute("newtodo", new Todo());
 	}
