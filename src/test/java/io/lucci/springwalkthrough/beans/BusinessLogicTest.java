@@ -1,4 +1,4 @@
-package com.absontheweb.springwalkthrough.beans;
+package io.lucci.springwalkthrough.beans;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -10,8 +10,8 @@ import static org.mockito.Mockito.when;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.absontheweb.springwalkthrough.beans.BusinessLogic;
-import com.absontheweb.springwalkthrough.beans.Counter;
+import io.lucci.springwalkthrough.beans.BusinessLogic;
+import io.lucci.springwalkthrough.beans.Counter;
 
 public class BusinessLogicTest {
 	

@@ -1,15 +1,15 @@
-package com.absontheweb.springwalkthrough;
+package io.lucci.springwalkthrough;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.absontheweb.springwalkthrough.beans.BusinessLogic;
-import com.absontheweb.springwalkthrough.beans.Counter;
+import io.lucci.springwalkthrough.beans.BusinessLogic;
+import io.lucci.springwalkthrough.beans.Counter;
 
 public class Application {
 	
-	private static Log log = LogFactory.getLog("com.absontheweb.springwalkthrough.Application");
+	private static Log log = LogFactory.getLog("io.lucci.springwalkthrough.Application");
 	
 	public static void main(String[] args) {
 		

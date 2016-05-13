@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.absontheweb.springwalkthrough.beans;
+package io.lucci.springwalkthrough.beans;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.absontheweb.springwalkthrough.beans.Counter;
+import io.lucci.springwalkthrough.beans.Counter;
 
 public class CounterTest {
 	
