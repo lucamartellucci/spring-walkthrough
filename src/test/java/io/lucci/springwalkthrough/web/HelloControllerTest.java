@@ -35,9 +35,22 @@ public class HelloControllerTest {
 	public void setUp() {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 	}
+	
+	
+	@Test
+	public void testHelloWorld() throws Exception {
+		MockHttpServletRequestBuilder createMessage = get("/hello");
+		
+		mockMvc.perform(createMessage)
+			.andExpect(status().is2xxSuccessful())
+			.andExpect(xpath("//h2[@id='greetings']").exists())
+			.andExpect(xpath("//h2[@id='greetings']/text()").string(is("Hello World!")));
+		
+		assertEquals(true,true);
+	}
 
 	@Test
-	public void testHandleRequestInternal() throws Exception {
+	public void testHelloWithName() throws Exception {
 		MockHttpServletRequestBuilder createMessage = get("/hello")
 				.param("name", "Jack");
 		
