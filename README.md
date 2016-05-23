@@ -11,7 +11,10 @@ The repository is organized in several different branches that you can checkout 
 - **STEP 1**: Standalone Java App with Spring (branch: **01-standalone-spring-xml**)
 - **STEP 2**: Hello Wordl with Spring MVC and XML configuration (branch: **02-mvc-spring-xml**)
 - **STEP 3**: Simple ToDo Application with Spring MVC, Thymeleaf and Java Configuration (branch: **03-mvc-spring-java**)
+<<<<<<< HEAD
 - **STEP 4**: A ToDo Application with Spring MVC, Thymeleaf, JPA2 and Spring Data JPA (branch: **04-mvc-jpa-spring-java**)
+=======
+>>>>>>> 0e58ef4ab6ff5579147c6636a45edb01d3a27f3e
 
 
 ### Step 1 - Standalone java app with Spring 
@@ -78,3 +81,4 @@ $ mvn clean package jetty:run
 ```
 We added here a new type of Todo: the task list that is a Todo item with several dependant tasks.
 To see the TODO app open your browser and navigate to: <http://localhost:8080/todos>  
+=======
