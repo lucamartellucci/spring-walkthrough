@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import io.lucci.springwalkthrough.commons.model.Status;
 import io.lucci.springwalkthrough.commons.model.Todo;
 import io.lucci.springwalkthrough.todoweb.client.TodoClient;
 
@@ -38,7 +37,7 @@ public class TodoController {
 		logger.info("Done for todo with id {}",id);
 		
 		// update the todo status
-//		todoClient.updateTodoStatus(id, Status.DONE);
+		todoClient.doneTodo(id);
 		
 		fillWithTodos(model);
 		// name of the view
@@ -51,7 +50,7 @@ public class TodoController {
 		logger.info("Done for todo with id {}",id);
 		
 		// update the todo status
-//		todoClient.removeTodo(id);
+		todoClient.removeTodo(id);
 		
 		fillWithTodos(model);
 		// name of the view

@@ -1,17 +1,20 @@
 package io.lucci.springwalkthrough.todoapi.controller;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.lucci.springwalkthrough.commons.model.Status;
 import io.lucci.springwalkthrough.commons.model.Todo;
 import io.lucci.springwalkthrough.todoapi.service.TodoService;
 
@@ -38,38 +41,31 @@ public class TodoController {
 		return ResponseEntity.ok(todoService.addTodo(todo));
 	}
 	
-//	@RequestMapping(path="/todos/done", method=RequestMethod.GET)
-//	public String doneTodo(@RequestParam Long id, Model model) throws Exception {
-//		
-//		logger.info("Done for todo with id {}",id);
-//		
-//		// update the todo status
-//		todoService.updateTodoStatus(id, Status.DONE);
-//		
-//		fillWithTodos(model);
-//		// name of the view
-//		return "redirect:/todos";
-//	}
-//	
-//	@RequestMapping(path="/todos/trash", method=RequestMethod.GET)
-//	public String todoTrash(@RequestParam Long id, Model model) throws Exception {
-//		
-//		logger.info("Done for todo with id {}",id);
-//		
-//		// update the todo status
-//		todoService.removeTodo(id);
-//		
-//		fillWithTodos(model);
-//		// name of the view
-//		return "redirect:/todos";
-//	}
-//
-//	
-//	private void fillWithTodos(Model model) {
-//		// add the collection of todos
-//		model.addAttribute("todos", todoService.getTodos());
-//		// add an empty object used to add a new todo
-//		model.addAttribute("newtodo", new Todo());
-//	}
+	@RequestMapping(value = "/todos/{id}/done", 
+			method = RequestMethod.POST, 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> doneTodo(@PathVariable Long id) throws Exception {
+		logger.info("Update the status to DONE for the todo with id {}", id);
+		Optional<Todo> todo = todoService.updateTodoStatus(id, Status.DONE);
+		if (todo.isPresent()){
+			return ResponseEntity.ok(todo.get());
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+	
+	@RequestMapping(value = "/todos/{id}", 
+			method = RequestMethod.DELETE, 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Void> removeTodo(@PathVariable Long id) throws Exception {
+		logger.info("Delete the todo with id {}", id);
+		Optional<Todo> todo = todoService.getTodo(id);
+		if (todo.isPresent()){
+			todoService.removeTodo(id);
+			return ResponseEntity.ok().build();
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+	}
 
 }

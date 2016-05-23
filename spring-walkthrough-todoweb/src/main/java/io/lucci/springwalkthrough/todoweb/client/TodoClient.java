@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import io.lucci.springwalkthrough.commons.model.Status;
 import io.lucci.springwalkthrough.commons.model.Todo;
 
 @FeignClient("todo-api")
@@ -20,12 +19,13 @@ public interface TodoClient {
 	@RequestMapping(method = RequestMethod.GET, value = "/todos")
 	Collection<Todo> getTodos();
 
-//	void removeTodo(Long id);
-//
-//	@RequestMapping(method = RequestMethod.PUT, value = "/todos/{id}")
-//	void updateTodoStatus(@RequestBody Todo todo);
-//
-//	@RequestMapping(method = RequestMethod.GET, value = "/todos/{id}")
-//	Todo getTodo(@PathVariable("id") Long id);
+	@RequestMapping(method = RequestMethod.DELETE, value = "/todos/{id}")
+	void removeTodo(@PathVariable("id") Long id);
+
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{id}/done")
+	void doneTodo(@PathVariable("id") Long id);
+
+	@RequestMapping(method = RequestMethod.GET, value = "/todos/{id}")
+	Todo getTodo(@PathVariable("id") Long id);
 
 }

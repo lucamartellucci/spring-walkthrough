@@ -2,6 +2,7 @@ package io.lucci.springwalkthrough.todoapi.service;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,15 +31,18 @@ public class TodoServiceImpl implements TodoService {
 	}
 	
 	@Override
-	public Todo getTodo(Long id) {
-		return todoAdapter.toTodo(repo.findOne(id));
+	public Optional<Todo> getTodo(Long id) {
+		return Optional.ofNullable(todoAdapter.toTodo(repo.findOne(id)));
 	}
 	
 	@Override
-	public void updateTodoStatus(Long id, Status status) {
+	public Optional<Todo> updateTodoStatus(Long id, Status status) {
 		TodoEntity entity = repo.findOne(id);
+		if (entity == null){
+			return Optional.empty();
+		}
 		entity.setStatus(status);
-		repo.save(entity);
+		return Optional.of(todoAdapter.toTodo(repo.save(entity)));
 	}
 	
 	@Override

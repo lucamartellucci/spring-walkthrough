@@ -1,6 +1,7 @@
 package io.lucci.springwalkthrough.todoapi.service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import io.lucci.springwalkthrough.commons.model.Status;
 import io.lucci.springwalkthrough.commons.model.Todo;
@@ -13,8 +14,8 @@ public interface TodoService {
 
 	void removeTodo(Long id);
 
-	void updateTodoStatus(Long id, Status status);
+	Optional<Todo> updateTodoStatus(Long id, Status status);
 
-	Todo getTodo(Long id);
+	Optional<Todo> getTodo(Long id);
 
 }
