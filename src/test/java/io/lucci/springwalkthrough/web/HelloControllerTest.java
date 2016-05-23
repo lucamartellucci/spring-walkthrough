@@ -1,4 +1,4 @@
-package com.absontheweb.springwalkthrough.web;
+package io.lucci.springwalkthrough.web;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

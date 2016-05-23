@@ -1,4 +1,4 @@
-package com.absontheweb.springwalkthrough.web;
+package io.lucci.springwalkthrough.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

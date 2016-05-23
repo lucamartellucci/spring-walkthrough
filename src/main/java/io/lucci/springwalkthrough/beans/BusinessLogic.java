@@ -1,4 +1,4 @@
-package com.absontheweb.springwalkthrough.beans;
+package io.lucci.springwalkthrough.beans;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,7 @@ public class BusinessLogic implements InitializingBean {
 	 * Using these annotations means that your beans are not coupled to Spring specific interfaces
 	 */
 	
-	private static Logger log = LoggerFactory.getLogger("com.absontheweb.springwalkthrough.beans.BusinessLogic");
+	private static Logger log = LoggerFactory.getLogger("io.lucci.springwalkthrough.beans.BusinessLogic");
 	
 	private Counter counter;
 	

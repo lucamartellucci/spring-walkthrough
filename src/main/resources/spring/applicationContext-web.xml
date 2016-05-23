@@ -11,7 +11,7 @@
 
 	<!-- controller mappings -->
 	
-	<bean id="helloController" class="com.absontheweb.springwalkthrough.web.HelloController">
+	<bean id="helloController" class="io.lucci.springwalkthrough.web.HelloController">
 	</bean>
 
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
