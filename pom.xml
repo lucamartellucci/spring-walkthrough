@@ -8,8 +8,8 @@
 	<name>spring-walkthrough</name>
 
 	<properties>
-		<spring.version>4.2.5.RELEASE</spring.version>
-		<thymeleaf.version>2.1.3.RELEASE</thymeleaf.version>
+		<spring.version>4.2.6.RELEASE</spring.version>
+		<thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
 	</properties>
 	<dependencies>
 	
@@ -115,7 +115,7 @@
 			<plugin>
 	            <groupId>org.eclipse.jetty</groupId>
 	            <artifactId>jetty-maven-plugin</artifactId>
-	            <version>9.2.11.v20150529</version>
+	            <version>9.3.9.v20160517</version>
 	            <configuration>
 	                <scanIntervalSeconds>10</scanIntervalSeconds>
 	                <webApp>
