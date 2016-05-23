@@ -8,7 +8,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.absontheweb.springwalkthrough">
+    <logger name="io.lucci.springwalkthrough">
         <level value="debug"/>
     </logger>
 

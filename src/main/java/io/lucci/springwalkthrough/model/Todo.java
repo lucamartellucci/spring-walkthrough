@@ -1,4 +1,4 @@
-package com.absontheweb.springwalkthrough.model;
+package io.lucci.springwalkthrough.model;
 
 import java.time.LocalDateTime;
 

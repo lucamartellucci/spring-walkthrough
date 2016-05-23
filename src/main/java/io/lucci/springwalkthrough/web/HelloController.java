@@ -1,4 +1,4 @@
-package com.absontheweb.springwalkthrough.web;
+package io.lucci.springwalkthrough.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ public class HelloController {
 	private final static Logger logger = LoggerFactory.getLogger(HelloController.class);
 
 	@RequestMapping(method = RequestMethod.GET, path="/hello")
-	public ModelAndView hello(@RequestParam("name") String name) throws Exception {
+	public ModelAndView hello(@RequestParam(name="name",required=false) String name) throws Exception {
 
 		logger.info("Serving request /hello with param name=[{}]", name);
 		

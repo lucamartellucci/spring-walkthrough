@@ -1,4 +1,4 @@
-package com.absontheweb.springwalkthrough.web;
+package io.lucci.springwalkthrough.web;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.absontheweb.springwalkthrough.config.WebConfig;
+import io.lucci.springwalkthrough.config.WebConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration ( classes = {WebConfig.class} )
