@@ -103,7 +103,7 @@ To execute the application launch the following command:
 ```sh
 $ ./startAll.sh
 ```
-
+Now open your browser and navigate to: <http://localhost:8761> to see the Eureka Server info page and to use the todo application navigate to: <http://localhost/8082/todos> 
 
 
 [Netflix Eureka]:https://github.com/Netflix/eureka
