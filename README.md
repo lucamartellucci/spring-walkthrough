@@ -92,6 +92,8 @@ All the microservices are [Spring Boot] application annotated with the typlical 
 - **@EnableEurekaClient**: used in both API and UI microservices; when a microservice with this annotation is started, automatically register itself to the Eureka server;
 - **@EnableFeignClients**: used on the UI microservice, it enables the client to contact the API microservice;
 
+In this example app we are using the Eureka and Feign libs in order to manage the microservice's instances and to make the microservice internal communications (the todoweb Feign client consumes the todoapi REST api).
+
 Checkout the branch **"05-mvc-jpa-cloud-spring-java"** to get the source code.
 
 ```sh
