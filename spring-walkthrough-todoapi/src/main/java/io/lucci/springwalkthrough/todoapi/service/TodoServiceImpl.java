@@ -27,12 +27,12 @@ public class TodoServiceImpl implements TodoService {
 		todo.setStatus(Status.ACTIVE);
 		todo.setCreationDate(LocalDateTime.now());
 		TodoEntity savedTodo = repo.save(todoAdapter.toEntity(todo));
-		return todoAdapter.toTodo(savedTodo);
+		return todoAdapter.toTodo(savedTodo).get();
 	}
 	
 	@Override
 	public Optional<Todo> getTodo(Long id) {
-		return Optional.ofNullable(todoAdapter.toTodo(repo.findOne(id)));
+		return todoAdapter.toTodo(repo.findOne(id));
 	}
 	
 	@Override
@@ -42,7 +42,7 @@ public class TodoServiceImpl implements TodoService {
 			return Optional.empty();
 		}
 		entity.setStatus(status);
-		return Optional.of(todoAdapter.toTodo(repo.save(entity)));
+		return todoAdapter.toTodo(repo.save(entity));
 	}
 	
 	@Override

@@ -68,9 +68,9 @@ public class TodoController {
 		return "redirect:/todos";
 	}
 	
-	private void fillWithTodos(Model model) {
+	private void fillWithTodos(Model model) throws Exception {
 		// add the collection of todos
-		model.addAttribute("todos", todoClient.getTodos());
+		model.addAttribute("todos", todoClient.getTodos().getBody());
 		// add an empty object used to add a new todo
 		model.addAttribute("newtodo", new Todo());
 	}
