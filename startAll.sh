@@ -3,13 +3,17 @@
 echo "Starting the TODO app";
 
 WORKING_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P);
-LOGGIN_DIR="$WORKING_DIR/logs";
+LOGGING_DIR="$WORKING_DIR/logs";
 
-if [ -d "$LOGGIN_DIR" ]; then
-   rm -rf $LOGGIN_DIR;
+#echo "workdir: $WORKING_DIR"
+#echo "logdir: $LOGGING_DIR"
+
+if [ -d "$LOGGING_DIR" ]; then
+   rm -rf $LOGGING_DIR;
 fi
-mkdir $LOGGIN_DIR;
+mkdir $LOGGING_DIR;
 
+#exit 0;
 
 
 PATH_APP_SERVICE_DISCOVERY="$WORKING_DIR/spring-walkthrough-servicediscovery/target";
@@ -20,7 +24,7 @@ PATH_APP_TODO_WEB="$WORKING_DIR/spring-walkthrough-todoweb/target";
 
 # SERVICE DISCOVERY STARTUP
 touch "$LOGGIN_DIR/serviceDiscovery.log";
-nohup java -jar "$PATH_APP_SERVICE_DISCOVERY/spring-walkthrough-servicediscovery.jar" > "$LOGGIN_DIR/serviceDiscovery.log" &
+nohup java -jar "$PATH_APP_SERVICE_DISCOVERY/spring-walkthrough-servicediscovery.jar" > "$LOGGING_DIR/serviceDiscovery.log" &
 
 sleep 3
 
